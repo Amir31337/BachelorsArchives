@@ -1,0 +1,49 @@
+/*********************************************
+ * OPL 12.10.0.0 Data
+ * Author: Amir
+ * Creation Date: Mar 31, 2021 at 12:25:51 PM
+ *********************************************/
+SheetConnection connex ("C:\\Users\\Amir\\Downloads\\data.xlsx");
+SheetConnection connexx ("C:\\Users\\Amir\\Downloads\\output.xlsx");
+TE to SheetWrite(connexx,"output!A1:A8");
+MA to SheetWrite(connexx,"output!B1:B8");
+SH to SheetWrite(connexx,"output!C1:C8");
+ES to SheetWrite(connexx,"output!D1:D8");
+AR to SheetWrite(connexx,"output!E1:E8");
+EI to SheetWrite(connexx,"output!F1:F8");
+TB to SheetWrite(connexx,"output!G1:G8");
+Y to SheetWrite(connexx,"output!H1:H8");
+
+TE_Cost from SheetRead (connex,"inputs!C3:J3");
+MA_Cost from SheetRead (connex,"inputs!C4:J4");
+SH_Cost from SheetRead (connex,"inputs!C5:J5");
+ES_Cost from SheetRead (connex,"inputs!C6:J6");
+AR_Cost from SheetRead (connex,"inputs!C7:J7");
+EI_Cost from SheetRead (connex,"inputs!C8:J8");
+TB_Cost from SheetRead (connex,"inputs!C9:J9");
+
+TE_Salary from SheetRead (connex,"inputs!K3");
+MA_Salary from SheetRead (connex,"inputs!K4");
+SH_Salary from SheetRead (connex,"inputs!K5");
+ES_Salary from SheetRead (connex,"inputs!K6");
+AR_Salary from SheetRead (connex,"inputs!K7");
+EI_Salary from SheetRead (connex,"inputs!K8");
+TB_Salary from SheetRead (connex,"inputs!K9");
+
+TE_FirstC from SheetRead (connex,"inputs!Q3");
+MA_FirstC from SheetRead (connex,"inputs!Q4");
+SH_FirstC from SheetRead (connex,"inputs!Q5");
+ES_FirstC from SheetRead (connex,"inputs!Q6");
+AR_FirstC from SheetRead (connex,"inputs!Q7");
+EI_FirstC from SheetRead (connex,"inputs!Q8");
+TB_FirstC from SheetRead (connex,"inputs!Q9");
+
+N_CallNo from SheetRead (connex,"inputs!N3");
+S_CallNo from SheetRead (connex,"inputs!N4");
+E_CallNo from SheetRead (connex,"inputs!N5");
+W_CallNo from SheetRead (connex,"inputs!N6");
+NW_CallNo from SheetRead (connex,"inputs!N7");
+NE_CallNo from SheetRead (connex,"inputs!N8");
+SW_CallNo from SheetRead (connex,"inputs!N9");
+SE_CallNo from SheetRead (connex,"inputs!N10");
+
