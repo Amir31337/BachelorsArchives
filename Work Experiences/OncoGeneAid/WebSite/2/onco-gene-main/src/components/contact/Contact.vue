@@ -1,0 +1,145 @@
+<template>
+    <div class="container container-fluid">
+        <div class="row" style="align-items: center;text-align: center;justify-content: center;margin: 40px 0 80px 0">
+            <h1 style="color: black">تماس با ما</h1>
+        </div>
+        <div class="alert alert-warning" id="spinner" v-if="send_form">
+            <div class="spinner-border text-warning" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <span style="padding-right:10px;font-size:14px">در حال ارسال اطلاعات ...</span>
+        </div>
+        <div v-if="server_error">
+            <div class="alert alert-danger">
+                <ul>
+                    <li v-for="value in error_message" :key="value">
+                        {{ value[0] }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="alert alert-success"  v-if="response_ok">
+            {{ success_message }}
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <form method="post" action="#">
+                    <div class="form-group">
+                        <label for="nameAndFamily">نام و نام خانوادگی (الزامی)</label>
+                        <input type="text" class="form-control nameAndFamily" id="nameAndFamily" v-model="formData.nameAndFamily">
+                    </div>
+                    <div class="form-group">
+                        <label for="numberPhone">شماره تماس (الزامی)</label>
+                        <input type="number" class="form-control" id="numberPhone" v-model="formData.numberPhone">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">ایمیل</label>
+                        <input type="email" class="form-control" id="email" v-model="formData.email">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">موضوع</label>
+                        <input type="text" class="form-control subject" id="subject" v-model="formData.subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="messageText">متن پیام</label>
+                        <textarea class="form-control messageText" id="messageText" rows="3" v-model="formData.messageText"></textarea>
+                    </div>
+                    <div class="form-group" style="float: left;">
+                        <button  type="submit" id="contactBtn" @click.prevent="sendContact()" class="btn btn-outline-success">ارسال</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="elementor-column-wrap">
+                    <div class="elementor-element">
+                        <p class="elementor-heading-title">ما را پیدا کنید</p>
+                    </div>
+                    <div class="elementor-widget">
+                        <p><strong>آدرس</strong>: تهران، خیابان آزادی، خیابان حبیب الهی جنوبی، ایستگاه نوآوری شریف، سالن بنیاد ملی نخبگان، هومن کنسر<i>،</i> پلاک ۵۶<br/>
+
+                            <strong>تلفن:</strong>
+                            <span style="text-decoration: underline;">
+                                    <span style="color: #ffffff;">
+                                        <a style="color: #ffffff; text-decoration: underline;" href="tel:02166095308" target="_blank" rel="noopener nofollow" data-wpel-link="internal">
+                                            ۶۶۰۹۵۳۰۸-۰۲۱
+                                        </a>
+                                    </span>
+                                </span>
+                            <br/>
+
+                            <strong>ایمیل:</strong>
+                            <span style="text-decoration: underline; color: #ffffff;">
+                                    <a style="color: #ffffff; text-decoration: underline;" href="mailto:info@oncogeneaid.ir" target="_blank" rel="noopener nofollow">
+                                        info@oncogeneaid.ir
+                                    </a>
+                                </span>
+                            <br/>
+                            <strong>صفحه اینستاگرام:</strong> <span style="text-decoration: underline;"><span style="color: #ffffff;"><a style="color: #ffffff; text-decoration: underline;" href="https://www.instagram.com/humancancer_org/" target="_blank" rel="nofollow external noopener noreferrer" data-wpel-link="external">humancancer_org@</a></span></span><br/>
+                            <strong>ارتباط از طریق واتساپ:</strong><span style="text-decoration: underline;"><span style="color: #ffffff;"><a style="color: #ffffff; text-decoration: underline;" href="https://api.whatsapp.com/send?phone=989033097843" target="_blank" rel="noopener nofollow external noreferrer" data-wpel-link="external">۰۹۰۳۳۰۹۷۸۴۳</a></span></span><br/>
+                            <strong>کارشناس ارتباط یا مشتریان:</strong>
+                            <span><span style="text-decoration: underline;">۰۹۰۲۷۸۴۳۲۲۲</span>&nbsp; –&nbsp; </span><span style="text-decoration: underline;">۰۹۰۲۷۸۴۳۲۲۲</span></p>
+                    </div>
+                    <div class="elementor-element elementor-element-73f71ec3 elementor-widget elementor-widget-google_maps" data-id="73f71ec3" data-element_type="widget" data-widget_type="google_maps.default">
+                        <div class="elementor-widget-container">
+                            <div class="elementor-custom-embed">
+                                <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=35.7064312379362%2C%2051.356199655478505&amp;t=m&amp;z=16&amp;output=embed&amp;iwloc=near" aria-label="35.7064312379362, 51.356199655478505"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    name:"Contact",
+    data(){
+        return{
+            formData: {
+                nameAndFamily:'',
+                numberPhone:'',
+                email:'',
+                subject:'',
+                messageText:''
+            },
+            send_form:false,
+            server_error:false,
+            error_message:{},
+            response_ok:false,
+            success_message:{}
+        }
+    },
+    methods:{
+        sendContact: function(){
+            this.send_form=true;
+            this.axios.post(this.$siteUrl+'/api/contact',this.formData)
+                .then(response=>{
+                if(response.data.original.message==='errors')
+                {
+                    this.send_form=false;
+                    this.server_error=true;
+                    this.error_message=response.data.original.data;
+                }
+                else{
+                    this.send_form=false;
+                    this.server_error=false;
+                    this.response_ok = true;
+                    this.formData={};
+                    this.success_message=response.data.original.message;
+                }
+            }).catch(()=>{
+                this.send_form=false;
+                this.server_error=true;
+                this.error_message='خطا در ارسال اطلاعات - مجددا تلاش نمایید';
+            });
+        }
+    }
+
+}
+</script>
+
+<style scoped src="../../assets/components/contact/all.css">
+    /*@import "../../assets/components/contact/all.css";*/
+</style>

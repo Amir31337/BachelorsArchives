@@ -1,0 +1,219 @@
+.divOurStory{
+    display: flex !important;
+    align-items: center !important;
+    text-align: center !important;
+    justify-content: center !important;
+    margin-top: 60px !important;
+}
+.divTeam{
+    display: flex !important;
+    align-items: center !important;
+    text-align: center !important;
+    justify-content: center !important;
+}
+.divWhoWeAre{
+    display: flex !important;
+    align-items: center !important;
+    text-align: center !important;
+    justify-content: center !important;
+}
+.DivAbsolutePosition{
+    position: absolute !important;
+    bottom: -100px !important;background: white !important;width: 50% !important;padding: 40px !important;font-size: 46px !important;box-shadow: 0px 0px 4px !important;
+}
+.cardCustom {
+    float: left !important;
+    width: 20% !important;
+    padding: 0 10px !important;
+
+    background: #e3e3e3 !important;
+    margin: 5px
+}
+@media screen and (max-width: 1180px) {
+    .DivAbsolutePosition{
+        font-size: 30px !important;
+    }
+}
+@media screen and (max-width: 718px) {
+    .cardCustom {
+        width: 100% !important;
+        display: block !important;
+    }
+    .rowCard{
+        display: contents !important;
+    }
+
+    .DivAbsolutePosition{
+        font-size: 16px !important;
+        padding: 26px !important;
+    }
+}
+
+.image {
+    /*width: 40% !important;*/
+    padding: 0 10px !important;}
+@media screen and (max-width: 1016px) {
+    .imageRow{
+        display: contents !important;
+    }
+    .image {
+        /*width: 100% !important !important;*/
+        display: block !important;
+    }
+}
+
+.container{
+    position: relative !important;display: flex !important;align-items: center !important;text-align: center !important;justify-content: center !important;
+}
+.containerChild{
+    max-width: 1140px !important;
+}
+
+
+
+.about-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-tow-title,.section-three-title,.section-four-title,.section-five-title{
+    display: flex;
+    justify-content: center;
+    height: 20%;
+    margin: 20px;
+    font-size: 30px;
+    background: linear-gradient(45deg, #4b00f3, #8598af);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    font-weight: bold;
+}
+.section-tow-detile,.section-three-detile{
+    width: 80%;
+    display: flex;
+    justify-content: right;
+    text-align: justify;
+}
+.section-four{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+.section-four-detile{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.team-one,.team-two{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}
+p{
+    direction: rtl;
+    text-align: justify;
+}
+.section-tow{
+    margin-top: 40px;
+}
+.section-tow,.section-three,.section-four,.section-five{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-item{
+    box-shadow: 0px 0px 5px 0px #525252;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 14px;
+}
+
+.section-five-detile{
+    width: 80%;
+}
+.section-five-detile-image{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.section-five-detile-image > img{
+    margin: 20px;
+}
+.section-one{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.section-one-detile{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: relative;
+}
+.section-one-detile > img{
+    margin: 20px;
+}
+
+.user-name{
+    padding: 4px 12px;
+    line-height: 30px;
+    font-size: 14px;
+}
+.role{
+    float: right;
+}
+@media screen and (max-width: 400px) {
+    .section-one-detile > img{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .section-five-detile-image > img{
+        width: 100%;
+    }
+}
+@media screen and (min-width: 1264px) {
+    .team-item {
+        flex: 1;
+    }
+}
+@media screen and (max-width: 1264px) {
+    .team-item {
+        width: 45%;
+    }
+}
+@media screen and (max-width: 653px) {
+    .team-item {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .team-item {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .fa-user-circle {
+        font-size: 50px !important;
+    }
+}
+

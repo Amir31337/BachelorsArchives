@@ -1,0 +1,14 @@
+{
+    "/js/vue2.js": "/js/vue2.js",
+    "/modules/users/components.js": "/modules/users/components.js",
+    "/modules/themes/components.js": "/modules/themes/components.js",
+    "/modules/front-theme/components.js": "/modules/front-theme/components.js",
+    "/modules/shop/components.js": "/modules/shop/components.js",
+    "/modules/productPriceChanges/components.js": "/modules/productPriceChanges/components.js",
+    "/modules/priceVariation/components.js": "/modules/priceVariation/components.js",
+    "/modules/panelTheme/components.js": "/modules/panelTheme/components.js",
+    "/modules/sliders/components.js": "/modules/sliders/components.js",
+    "/modules/faq/components.js": "/modules/faq/components.js",
+    "/modules/messages/components.js": "/modules/messages/components.js",
+    "/modules/fileManager/components.js": "/modules/fileManager/components.js"
+}

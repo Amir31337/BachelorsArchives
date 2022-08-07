@@ -1,0 +1,38 @@
+.container-fluid{
+    background: white !important;
+}
+.form-group label {
+    float: right;
+}
+.elementor-column-wrap {
+    background-color: #1457c5;
+    border-radius: 40px;
+    padding: 20px;
+}
+.elementor-element {
+    color: #FFFFFF;
+    font-size: 28px;
+}
+p {
+    color: #FFFFFF;
+    float: right;
+    direction: rtl;
+    text-align: justify;
+    line-height: 42px;
+}
+iframe {
+    width: 100%;
+    height: 200px;
+}
+form {
+    line-height: 40px;
+}
+.nameAndFamily {
+    direction: rtl;
+}
+.subject {
+    direction: rtl;
+}
+.messageText {
+    direction: rtl;
+}

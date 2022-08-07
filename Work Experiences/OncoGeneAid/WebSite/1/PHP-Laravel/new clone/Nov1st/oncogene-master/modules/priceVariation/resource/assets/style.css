@@ -1,0 +1,88 @@
+.variation-detail .info_item_product{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e1e1e1;
+    padding:15px 15px !important;
+    justify-content: space-between;
+    font-size: 15px;
+}
+.variation-detail .v-btn{
+    width: 90% !important;
+    margin: 20px auto;
+    display: flex;
+    letter-spacing: normal !important;
+}
+.back-icon{
+    padding:10px;
+    border-bottom: 1px solid #e1e1e1;
+}
+.variation-detail .discount_price{
+    height:auto !important;
+    justify-content: space-between;
+    padding-right: 15px;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+}
+.variation-detail p{
+    margin:0px !important;
+}
+.variation-detail .price{
+    font-weight: bold;
+    font-size: 20px !important;
+}
+.variation-detail{
+    box-shadow: none !important;
+    -webkit-box-shadow:none !important;
+    border:1px solid #eaeaea !important;
+}
+.info_item_product {
+    font-size: 15px;
+}
+.price-discount-badge{
+    padding: 3px 9px;
+    color: white !important;
+    background: #ef5662;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    font-size: 15px;
+    letter-spacing: .5px;
+}
+.color_ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.color_ul li {
+    list-style: none;
+    border: 1px solid #ccc;
+    border-top-color: rgb(204, 204, 204);
+    border-right-color: rgb(204, 204, 204);
+    border-bottom-color: rgb(204, 204, 204);
+    border-left-color: rgb(204, 204, 204);
+    margin-left: 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    position: relative;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+@media (max-width:960px) {
+    .variation-detail{
+        width:1000%;
+        border:0px !important;
+        margin-top:20px;
+    }
+    .cart-btn-box{
+        position: fixed;
+        bottom: 0px;
+        background: white;
+        width: 100%;
+        left: 0px;
+        right: 0px;
+        border-top: 1px solid gainsboro;
+        z-index: 5;
+    }
+    body{
+        padding-bottom:100px;
+    }
+}
